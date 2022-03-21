@@ -16,7 +16,7 @@ const getById = async (req, res) => {
         if (signID) {
             return res.status(200).json(signID);
         } else {
-            return res.status(404).json('No beast found by this id');
+            return res.status(404).json('No sign found by this id');
         }
     } catch (err) {
         return res.status(500).json(err);
