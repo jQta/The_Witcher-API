@@ -1,5 +1,6 @@
 const express = require('express');
 const { connect } = require('./config/db');
+const cors = require("cors");
 const passport = require('passport');
 require('./api/authentication/passport');
 
@@ -27,6 +28,11 @@ connect();
 const PORT = process.env.PORT;
 const server = express();
 server.set("secretKey", process.env.KEY);
+
+server.use(cors({
+  origin: [ 'http://localhost:4200' ],
+  credentials: false,
+}));
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));

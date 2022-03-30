@@ -2,7 +2,7 @@ const Character = require('../models/Character.model');
 
 const getAllCharacters = async (req, res) => {
     try {
-        const characters = await Character.find({}, { _id: 0, __v: 0, createdAt: 0, updatedAt: 0 });
+        const characters = await Character.find({}, { __v: 0, createdAt: 0, updatedAt: 0 });
         return res.status(200).json(characters)
     } catch (err) {
         return res.status(500).json(err);
@@ -41,7 +41,7 @@ const putCharacter = async (req, res, next) => {
     }
 };
 
-const getById = async (req, res) => {
+const getCharacter = async (req, res) => {
     const id = req.params.id;
     try {
         const characterID = await Character.findById(id);
@@ -117,4 +117,4 @@ const postPicture = async (req, res, next) => {
     }
 };
 
-module.exports = { getAllCharacters, getById, getFilteredName, getFilteredRace, getFilteredGenre, getFilteredNationality, getFilteredBirth, postCharacter, deleteCharacter, putCharacter, postPicture };
+module.exports = { getAllCharacters, getCharacter, getFilteredName, getFilteredRace, getFilteredGenre, getFilteredNationality, getFilteredBirth, postCharacter, deleteCharacter, putCharacter, postPicture };

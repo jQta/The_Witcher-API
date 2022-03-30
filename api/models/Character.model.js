@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 const characterSchema = new Schema(
     {
         name: { type: String, required: true },
-        alias: { type: String },
+        image: { type: String },
+        alias: [],
         race: { type: String, required: true },
         gender: { type: String, required: true },
         status: { type: String },
         birth: { type: Number },
         nationality: { type: String },
-        picture: { type: String },
         titles: { type: String },
         profession: { type: String },
         affiliations: { type: String },
