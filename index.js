@@ -30,7 +30,7 @@ const server = express();
 server.set("secretKey", process.env.KEY);
 
 server.use(cors({
-  origin: [ 'http://localhost:4200' ],
+  origin: [ '*' ],
   credentials: false,
 }));
 
