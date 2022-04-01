@@ -31,7 +31,7 @@ server.set("secretKey", process.env.KEY);
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Credentials', false);
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
