@@ -31,7 +31,7 @@ server.set("secretKey", process.env.KEY);
 
 server.use(cors({
   origin: [ '*' ],
-  credentials: false,
+  credentials: true,
 }));
 
 server.use((req, res, next) => {
